@@ -19,18 +19,21 @@ let speed;
 let speedSet = 1000;
 
 function load() {
-  console.log("load");
-  setUp();
+  // console.log("load");
+  document.querySelector(".typewritten").textContent = "";
+  document.querySelector("html").addEventListener("click", setUp);
+  // setUp();
 }
 
 function setUp() {
-  console.log("setUp");
+  // console.log("setUp");
+  document.querySelector("html").removeEventListener("click", setUp);
   emptyString.textContent = "";
   initTextLoop();
 }
 
 function initTextLoop() {
-  console.log("initTextLoop");
+  // console.log("initTextLoop");
   i = -1;
   // maxLen = 10;
   textLoop();
@@ -39,11 +42,11 @@ function initTextLoop() {
 document.querySelector("html").addEventListener("click", playSound);
 
 function playSound() {
-  if (string.indexOf(" ") === " ") {
-    console.log("Space");
+  if (string.charAt(i) === " ") {
+    // console.log("Space");
     typeSpace.play();
   } else {
-    console.log("Type");
+    // console.log("Type");
     typeKey1.play();
   }
 }
@@ -53,14 +56,14 @@ function setUpSpeed() {
   if (speed === 1) {
     speedSet = 1000;
   } else if (speed === 2) {
-    speedSet = 2000;
+    speedSet = 1250;
   } else if (speed === 2) {
-    speedSet = 3000;
+    speedSet = 750;
   }
 }
 
 function textLoop() {
-  console.log("i", i);
+  // console.log("i", i);
   i++;
   if (i < string.length) {
     document.querySelector(".typewritten").innerHTML += string.charAt(i);
