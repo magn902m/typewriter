@@ -1,1 +1,1 @@
-Link to typewriter: https://magn902m.github.io/typewriter/
+Link to typewriter: https://magn902m.github.io/typewriter/typewriter.html
