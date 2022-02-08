@@ -17,6 +17,7 @@ let i;
 let maxLen;
 let speed;
 let speedSet = 1000;
+let keyRandom;
 
 function load() {
   // console.log("load");
@@ -47,7 +48,12 @@ function playSound() {
     typeSpace.play();
   } else {
     // console.log("Type");
-    typeKey1.play();
+    keyRandom = Math.floor(Math.random() * 2) + 1;
+    if (keyRandom == 1) {
+      typeKey1.play();
+    } else {
+      typeKey2.play();
+    }
   }
 }
 
